@@ -1,0 +1,5 @@
+@import './reset.css';
+
+html, body {
+  background-color: transparent;
+}

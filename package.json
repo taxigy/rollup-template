@@ -1,0 +1,26 @@
+{
+  "name": "rollup-starter",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "author": "Rishat Muhametshin <rishat@rishat.us>",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "start": "concurrently --kill-others \"nodemon -e js,css -i build/ -x \\\"yarn build\\\"\" \"live-server ./build\""
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.2.0",
+    "babel-core": "^6.26.0",
+    "concurrently": "^3.5.1",
+    "live-server": "^1.2.0",
+    "nodemon": "^1.17.2",
+    "postcss-import": "^11.1.0",
+    "rollup": "^0.57.1",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-generate-html-template": "^1.1.0",
+    "rollup-plugin-node-globals": "^1.2.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-postcss": "^1.4.0",
+    "rollup-plugin-replace": "^2.0.0"
+  }
+}
