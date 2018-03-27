@@ -1,9 +1,11 @@
 // rollup-plugin-{babel,postcss,node-resolve,replace,node-globals} autoprefixer
 import babel from 'rollup-plugin-babel';
+import commonjs from 'rollup-plugin-commonjs';
 import globals from 'rollup-plugin-node-globals';
+import html from 'rollup-plugin-generate-html-template';
 import postcss from 'rollup-plugin-postcss';
 import replace from 'rollup-plugin-replace';
-import html from 'rollup-plugin-generate-html-template';
+import resolve from 'rollup-plugin-node-resolve';
 
 export default {
   input: 'src/index.js',
@@ -12,13 +14,20 @@ export default {
     format: 'iife',
   },
   plugins: [
+    resolve({
+      jsnext: true,
+      main: true,
+    }),
+    commonjs({
+      include: 'node_modules/**',
+    }),
     babel({
       exclude: ['node_modules/**', 'src/**/*.css'],
+      presets: ['react-app'],
     }),
     postcss({
-      plugins: [
-        require('postcss-import'),
-      ]
+      modules: true,
+      plugins: [require('precss'), require('postcss-import')],
     }),
     globals(),
     replace({

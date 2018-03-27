@@ -11,16 +11,23 @@
   "devDependencies": {
     "autoprefixer": "^8.2.0",
     "babel-core": "^6.26.0",
+    "babel-preset-react-app": "^3.1.1",
     "concurrently": "^3.5.1",
     "live-server": "^1.2.0",
     "nodemon": "^1.17.2",
     "postcss-import": "^11.1.0",
+    "precss": "^3.1.2",
     "rollup": "^0.57.1",
     "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-generate-html-template": "^1.1.0",
     "rollup-plugin-node-globals": "^1.2.0",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-postcss": "^1.4.0",
     "rollup-plugin-replace": "^2.0.0"
+  },
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   }
 }
